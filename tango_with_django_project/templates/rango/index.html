@@ -13,6 +13,8 @@
             hey there partner!
         </div>
 
+        <br /><strong>Most Liked Categories</strong>
+
         <div>
             {% if categories %}
             <ul>
@@ -23,7 +25,23 @@
                 {% endfor %}
             </ul>
             {% else %}
-                <stong>There are no categories present.</stong>
+                <strong>There are no categories present.</strong>
+            {% endif %}
+        </div>
+
+        <strong>Most Viewed Pages</strong>
+
+        <div>
+            {% if page %}
+                <ul>
+                    {% for page in pages %}
+                        <li>
+                            <a href="{{ page.url }}">{{ page.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                The specified page does not exist!
             {% endif %}
         </div>
 
